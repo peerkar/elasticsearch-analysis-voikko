@@ -5,3 +5,5 @@ gradle.properties
 build
 .DS_Store
 .local-unspecified-test-execution-times.log
+.project
+.settings
