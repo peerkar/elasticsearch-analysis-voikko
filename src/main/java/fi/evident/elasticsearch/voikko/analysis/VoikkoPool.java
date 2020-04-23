@@ -88,6 +88,9 @@ final class VoikkoPool {
         this.maxSize = maxSize;
     }
 
+	/**
+	 * 2020-04-22: use "fi-x-morpho" syntax to support old libvoikko version (3.6)
+	 */
     private Voikko createNewInstance() {
         SecurityManager sm = System.getSecurityManager();
         if (sm != null)
@@ -95,7 +98,8 @@ final class VoikkoPool {
 
         return AccessController.doPrivileged((PrivilegedAction<Voikko>) () -> {
             try {
-                return new Voikko(language, dictionaryPath);
+				
+                return new Voikko(language + "-x-morpho", dictionaryPath);
             } catch (UnsatisfiedLinkError e) {
                 throw new VoikkoNativeLibraryNotFoundException(e);
             }
