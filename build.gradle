@@ -22,7 +22,7 @@ apply plugin: 'elasticsearch.esplugin'
 apply plugin: 'nebula.maven-publish' // esplugin needs nebula
 apply plugin: 'maven-publish'
 
-version = '0.6.0-es-6.6.1'
+version = '0.6.0-es-6.6.1-libvoikko-3.6'
 
 javadoc {
     options.encoding = 'UTF-8'
